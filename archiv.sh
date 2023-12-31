@@ -29,8 +29,8 @@ then
   echo "Перенос работает"
 else
   log "Старт переноса"
-  echo 'start' > /tmp/archiving.start
-  rsync -arvuzt $PUBLISH_DIR/recording/ $ARCHIV_FOLDER/recording/ >> /var/log/archiving.log
+  echo 'start' > /tmp/archiving.start	
+  rsync -rvuzt $PUBLISH_DIR/recording/raw/ $ARCHIV_FOLDER/recording/raw/ >> /var/log/archiving.log
 
   log "Перенос завершон"
   rm /tmp/archiving.start
